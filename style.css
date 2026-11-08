@@ -1,0 +1,254 @@
+:root{
+  --bg-dark: hsl(0, 0%, 85%);
+  --bg: hsl(0, 0%, 90%);
+  --bg-light: hsl(0, 0%, 95%);
+
+  --text: hsl(0 0% 30%);
+  --shadow: hsl(0, 0%, 78%);
+  --primary: hsl(192, 90%, 53%);
+  --secondary: hsl(192, 70%, 53%);
+  --current: hsl(192, 100%, 40%);
+  --prim: hsla(192, 90%, 53%,  0.3);
+  --notAnswered: hsla(192, 90%, 40%, .6);
+
+  --correct: hsla(120, 100%, 50%, 0.345);
+  --incorrect: hsla(0, 100%, 50%, 0.345);
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--bg-dark);
+}
+.box{
+  width: 400px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: solid 1px var(--bg-light);
+  padding: 10px;
+  border-radius: 7px;
+  background: var(--bg);
+}
+.navDisplay{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title{
+  font-size: 1.5em;
+  text-align: center;
+}
+#time{
+  color: var(--text);
+  padding: 4px 7px;
+  font-size: 15px;
+  font-weight: bold;
+  background: var(--prim);
+  border-radius: 3px;
+}
+.ending{
+  --prim: hsla(0, 100%, 50%, 0.55);
+  --text: var(--bg-light);
+}
+.questioBox{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.questio{
+  font-size: 1.1em;
+}
+
+#optionBox{
+  display: grid;
+  gap: .6em;
+}
+
+.optionSelec{
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--bg-dark);
+  background: var(--bg-light);
+}
+
+.option{
+  padding: 7px;
+  border: 1px solid rgba(136, 115, 115, 0.322);
+  border-radius: 5px;
+  display: flex;
+  gap: .5em;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  background: var(--bg-light);
+}
+
+.buttonBox{
+  display: flex;
+  justify-content: space-between;
+}
+/*---------BUTTONS------------*/
+#previous, #next, .reset, #reviewQuestion{
+  padding: 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#previous{
+  border: 1px solid var(--bg-light);
+  background: var(--bg-light);
+}
+
+#next, .reset{
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+.option:hover{
+  box-shadow: 3px 3px 3px var(--shadow);
+  transition: .3s;
+}
+#previous:hover{
+  background-color: var(--bg-dark);
+  box-shadow: 3px 3px 4px var(--shadow);
+  transition: .3s;
+
+}
+
+ #next:hover,  .reset:hover{
+  background: var(--secondary);
+  box-shadow: 3px 3px 4px var(--shadow);
+  transition: .3s;
+ }
+
+#reviewQuestion{
+  border: 1px solid var(--bg-dark);
+  background: var(--bg);
+  margin-right: 10px;
+}
+#reviewQuestion:hover{
+  background: var(--bg-light);
+  box-shadow: 3px 3px 4px var(--shadow);
+  transition: .3s;
+}
+
+.pop-pare{
+  background: transparent;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+ .popup{
+  background-color: var(--bg-light);
+  border: 1px solid var(--bg-dark);
+  border-radius: 5px;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+ }
+ .result-info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .4em;
+ }
+ .result{
+  font-size: 1.4em;
+  color: var(--secondary);
+  font-weight: bold;
+ }
+ #score{
+  font-size: 1.2em;
+  margin-bottom: 15px;
+ }
+ #percent{
+  font-size: 1.3em;
+ }
+ .hidden{
+  display: none;
+ }
+ .nav{
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+
+ }
+ .detail{
+  font-size: 1.2em;
+ }
+ .boxs{
+  width: 100%;
+  height: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+ }
+ .navBtns{
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--bg-dark);
+  background: var(--prim);
+  border-radius: 15px;
+  cursor: pointer;
+ }
+
+.selected{
+  --bg-light: var(--primary);
+  border-radius: 7px;
+}
+ .answered{
+  --prim: var(--primary);
+ }
+ .current{
+  width: 15px;
+  height: 15px;
+  --bg-dark: var(--secondary);
+  --prim: var(--current);
+ }
+ .notAnswered{
+  --primary: var(--notAnswered)
+ }
+
+.correct{
+  --bg-light: var(--correct);
+}
+.incorrect{
+--bg-light: var(--incorrect);
+}
+.correctUser{
+  --primary: var(--correct);
+  --prim: var(--correct);
+}
+
+.incorrectUser{
+--primary: var(--incorrect);
+--prim: var(--incorrect);
+}
